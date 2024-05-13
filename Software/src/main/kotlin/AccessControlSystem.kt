@@ -5,10 +5,12 @@ import TUI.CMD_ABORT_CODES
 import TUI.ENTRY
 import TUI.KBDTIMEOUT
 import TUI.LINES
+import kotlin.system.exitProcess
 
 fun main() {
     AccessControlSystem.init()
     AccessControlSystem.run()
+    exitProcess(0)
 }
 
 
@@ -219,11 +221,6 @@ object AccessControlSystem {
     }
 
 
-    /**
-     * Unlocks a user
-     *
-     * @param user the user to unlock
-     */
     fun unlockUserCommand() {
         val uin = getIntEntry(ENTRY.UIN)
 
